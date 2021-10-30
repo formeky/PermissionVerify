@@ -1,4 +1,4 @@
-package xyz.formeky.permissionverify.conf;
+package xyz.formeky.permissionverify.handler;
 
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -9,4 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ExceptionHandler {
 
+    public void handleJwtExpireException(){
+
+    }
 }

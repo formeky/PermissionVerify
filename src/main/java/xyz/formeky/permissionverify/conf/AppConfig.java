@@ -1,17 +1,21 @@
 package xyz.formeky.permissionverify.conf;
 
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import xyz.formeky.permissionverify.enums.GlobalRoleEnum;
-
-import java.lang.reflect.Field;
+import xyz.formeky.permissionverify.token.TokenMsg;
 
 /**
  * @author zcw
- * @description:初始化全局角色枚举类
+ * @description:
  */
 @Configuration
 public class AppConfig{
+
+    @Bean
+    @ConditionalOnMissingBean
+    public TokenMsg tokenMsg(){
+        return new TokenMsg(1,1,"1");
+    }
 
 }
